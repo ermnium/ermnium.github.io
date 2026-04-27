@@ -1579,7 +1579,7 @@
     <!-- ADD PROFILE MODAL -->
     <div class="modal-overlay" id="addProfileModal">
       <div class="modal">
-        <h3>✨ new profile</h3>
+        <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">auto_awesome</span> new profile</h3>
         <div class="form-group">
           <label class="form-label">Name</label>
           <input class="form-input" id="newProfileName" placeholder="e.g. Kids, Mom…">
@@ -1650,7 +1650,7 @@
           <a id="nav-library" onclick="showView('library')"><span class="material-icons">favorite</span> My List</a>
         </nav>
         <div class="topbar-right">
-          <input class="topbar-search" id="topbarSearch" placeholder="🔍 Search…"
+          <input class="topbar-search" id="topbarSearch" placeholder="<span class="material-icons" style="font-size:inherit;vertical-align:middle;">search</span> Search…"
             onkeydown="if(event.key==='Enter')doNavSearch()">
           <div class="nav-avatar-wrap">
             <div class="nav-avatar" id="navAvatar" onclick="toggleDd()">
@@ -1686,7 +1686,7 @@
           <div class="hero-vignette"></div>
           <div class="hero-content">
             <div class="hero-badges">
-              <span class="hero-badge badge-new">⚡ Featured</span>
+              <span class="hero-badge badge-new"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">bolt</span> Featured</span>
               <span class="hero-badge" id="heroRatingBadge"></span>
               <span class="hero-badge" id="heroGenreBadge"></span>
             </div>
@@ -1698,9 +1698,9 @@
             </div>
             <div class="hero-desc" id="heroDesc"></div>
             <div class="hero-actions">
-              <button class="btn-play" id="heroPlayBtn">▶ Play Now</button>
-              <button class="btn-more" id="heroMoreBtn">ℹ More Info</button>
-              <button class="btn-fav" id="heroFavBtn" onclick="toggleHeroFav()">☆</button>
+              <button class="btn-play" id="heroPlayBtn"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">play_arrow</span> Play Now</button>
+              <button class="btn-more" id="heroMoreBtn"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">info</span> More Info</button>
+              <button class="btn-fav" id="heroFavBtn" onclick="toggleHeroFav()"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span></button>
             </div>
           </div>
           <div class="hero-dots" id="heroDots"></div>
@@ -1713,47 +1713,47 @@
             <div class="row-wrap" id="continueRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🔥 Trending Movies</span><a class="see-all"
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_fire_department</span> Trending Movies</span><a class="see-all"
                 onclick="loadSeeAll('trending','movie')">See all →</a></div>
             <div class="row-wrap" id="trendingRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">📺 Trending TV Shows</span><a class="see-all"
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">tv</span> Trending TV Shows</span><a class="see-all"
                 onclick="showView('tv')">See all →</a></div>
             <div class="row-wrap" id="tvHomeRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">⭐ Top Rated</span><a class="see-all"
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> Top Rated</span><a class="see-all"
                 onclick="loadSeeAll('top_rated','movie')">See all →</a></div>
             <div class="row-wrap" id="topRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🎬 Now Playing</span><a class="see-all"
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span> Now Playing</span><a class="see-all"
                 onclick="loadSeeAll('now_playing','movie')">See all →</a></div>
             <div class="row-wrap" id="nowRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🚀 Sci-Fi</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">rocket_launch</span> Sci-Fi</span></div>
             <div class="row-wrap" id="scifiRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">💥 Action</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">flash_on</span> Action</span></div>
             <div class="row-wrap" id="actionRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">😂 Comedy</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">sentiment_very_satisfied</span> Comedy</span></div>
             <div class="row-wrap" id="comedyRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">👻 Horror</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">mood_bad</span> Horror</span></div>
             <div class="row-wrap" id="horrorRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">💕 Romance</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">favorite</span> Romance</span></div>
             <div class="row-wrap" id="romanceRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🕐 Watch History</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">schedule</span> Watch History</span></div>
             <div class="row-wrap" id="historyRow"><span style="color:var(--text-muted);font-style:italic">Nothing
                 watched yet</span></div>
           </div>
@@ -1767,7 +1767,7 @@
           <div class="hero-vignette"></div>
           <div class="hero-content">
             <div class="hero-badges">
-              <span class="hero-badge badge-tv">📺 TV Series</span>
+              <span class="hero-badge badge-tv"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">tv</span> TV Series</span>
               <span class="hero-badge" id="tvHeroRating"></span>
               <span class="hero-badge" id="tvHeroGenre"></span>
             </div>
@@ -1778,34 +1778,34 @@
             </div>
             <div class="hero-desc" id="tvHeroDesc"></div>
             <div class="hero-actions">
-              <button class="btn-play" id="tvHeroPlayBtn">▶ Watch S1 E1</button>
-              <button class="btn-more" id="tvHeroMoreBtn">ℹ More Info</button>
+              <button class="btn-play" id="tvHeroPlayBtn"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">play_arrow</span> Watch S1 E1</button>
+              <button class="btn-more" id="tvHeroMoreBtn"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">info</span> More Info</button>
             </div>
           </div>
         </div>
         <div class="app-body">
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🔥 Trending Shows</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_fire_department</span> Trending Shows</span></div>
             <div class="row-wrap" id="tvTrendRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">⭐ Top Rated</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> Top Rated</span></div>
             <div class="row-wrap" id="tvTopRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🎭 Drama</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">theater_comedy</span> Drama</span></div>
             <div class="row-wrap" id="tvDramaRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">😂 Comedy</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">sentiment_very_satisfied</span> Comedy</span></div>
             <div class="row-wrap" id="tvComedyRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🔪 Crime & Thriller</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">restaurant</span> Crime & Thriller</span></div>
             <div class="row-wrap" id="tvCrimeRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">🚀 Sci-Fi & Fantasy</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">rocket_launch</span> Sci-Fi & Fantasy</span></div>
             <div class="row-wrap" id="tvScifiRow"></div>
           </div>
           <div class="section">
@@ -1819,13 +1819,13 @@
       <div id="searchView" style="display:none">
         <div class="app-body search-view-inner">
           <div class="search-tabs">
-            <button class="search-tab active" onclick="switchSearchTab('movies')">🎬 Movies</button>
-            <button class="search-tab" onclick="switchSearchTab('tv')">📺 TV Shows</button>
+            <button class="search-tab active" onclick="switchSearchTab('movies')"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span> Movies</button>
+            <button class="search-tab" onclick="switchSearchTab('tv')"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">tv</span> TV Shows</button>
           </div>
           <div class="big-search-wrap">
             <input class="big-search" id="bigSearch" placeholder="Search titles, genres, actors…"
               onkeydown="if(event.key==='Enter')doBigSearchBtn()">
-            <button class="big-search-btn" onclick="doBigSearchBtn()">🔍 Search</button>
+            <button class="big-search-btn" onclick="doBigSearchBtn()"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">search</span> Search</button>
           </div>
           <div id="genreSection">
             <div class="genre-section-title">Browse by Genre</div>
@@ -1857,15 +1857,15 @@
           <div id="libFavs">
             <div class="results-grid" id="favGrid"></div>
             <div id="favEmpty" class="no-results" style="display:none">
-              <div class="nr-icon">❤️</div>
+              <div class="nr-icon"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">favorite</span></div>
               <h3>No favourites yet</h3>
-              <p>Tap ☆ on any title to save it here</p>
+              <p>Tap <span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span> on any title to save it here</p>
             </div>
           </div>
           <div id="libHist" style="display:none">
             <div class="results-grid" id="histGrid"></div>
             <div id="histEmpty" class="no-results" style="display:none">
-              <div class="nr-icon">🎬</div>
+              <div class="nr-icon"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span></div>
               <h3>No watch history yet</h3>
               <p>Start watching to see your history here</p>
             </div>
@@ -1878,7 +1878,7 @@
         <div class="app-body">
           <div class="settings-title">settings.</div>
           <div class="s-card">
-            <h3>👤 Account</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">person</span> Account</h3>
             <div class="s-row">
               <div>
                 <div class="s-label" id="sEmail">—</div>
@@ -1926,7 +1926,7 @@
             </div>
           </div>
           <div class="s-card">
-            <h3>🎬 Display</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span> Display</h3>
             <div class="s-row">
               <div>
                 <div class="s-label">Show Ratings</div>
@@ -1969,7 +1969,7 @@
                 <option value="movie">Movie</option>
                 <option value="tv">TV Show</option>
               </select>
-              <button class="obsessed-btn" onclick="previewObsessed()">🔍 Preview</button>
+              <button class="obsessed-btn" onclick="previewObsessed()"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">search</span> Preview</button>
             </div>
             <div class="obsessed-preview" id="obsessedPreview">
               <img id="obsessedPreviewImg" src="" alt="">
@@ -1981,12 +1981,12 @@
             </div>
             <div id="obsessedActiveStatus"
               style="display:none;padding:10px;background:rgba(45,122,45,0.1);border:1px solid rgba(45,122,45,0.3);font-size:12px;color:#2d7a2d;font-weight:bold">
-              ✓ Obsessed Mode is ON — <span id="obsessedActiveTitle">—</span>
+              <span class="material-icons" style="font-size:inherit;vertical-align:middle;">check</span> Obsessed Mode is ON — <span id="obsessedActiveTitle">—</span>
               <button class="obsessed-clear" style="margin-left:10px" onclick="clearObsessedMode()">Disable</button>
             </div>
           </div>
           <div class="s-card">
-            <h3>🗑️ Data</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">delete</span> Data</h3>
             <div class="s-row">
               <div>
                 <div class="s-label">Clear Watch History</div>
@@ -2009,18 +2009,30 @@
               <button class="danger-btn" onclick="deleteAccount()">Delete</button>
             </div>
           </div>
-          <div class="s-card">
-            <div class="s-card">
+          <div class="s-card" style="padding-bottom: 24px;">
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">info</span> About</h3>
+            
+            <div style="display:flex; flex-direction:column; align-items:center; margin: 16px 0 24px 0;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 14px; display:flex; align-items:center; justify-content:center; color:white; font-size: 32px; font-weight:bold; font-style:italic; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">e.</div>
+              <div class="s-label" style="font-size: 18px; font-style: italic;">ermnium.</div>
+              <div class="s-desc" style="margin-top:4px;">Version 5.0 • Borealis Release</div>
+            </div>
 
-              <h3>ℹ️ About</h3>
-              <div class="s-row">
-                <div>
-                  <div class="s-label">ermnium.</div>
-                  <div class="s-desc">Powered by moisty mutuals - Borealis × ermn. <a
-                      href="https://royalbay.github.io/ermn/" target="_blank" class="edit-btn"
-                      style="text-decoration:none">Visit</a> </div>
-                </div>
+            <div class="s-row">
+              <div>
+                <div class="s-label">Creators</div>
+                <div class="s-desc">moisty mutuals – Borealis × ermn</div>
               </div>
+            </div>
+
+            <div class="s-row">
+              <div>
+                <div class="s-label">ermn Framework</div>
+                <div class="s-desc">Explore the original design system</div>
+              </div>
+              <a href="https://royalbay.github.io/ermn/" target="_blank" class="edit-btn" style="text-decoration:none; display:flex; align-items:center; gap:4px; padding:6px 12px;">
+                <span class="material-icons" style="font-size:14px;">open_in_new</span> Visit
+              </a>
             </div>
           </div>
         </div>
@@ -2029,7 +2041,7 @@
       </div><!-- /appScreen -->
 
       <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-      <div class="toast" id="toast"><span class="toast-icon" id="toastIcon">✓</span><span id="toastMsg"></span>
+      <div class="toast" id="toast"><span class="toast-icon" id="toastIcon"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">check</span></span><span id="toastMsg"></span>
         <div class="toast-bar"></div>
       </div>
 
@@ -2059,7 +2071,7 @@
           { id: 10765, name: 'Sci-Fi & Fantasy', color: '#2563eb' }, { id: 9648, name: 'Mystery', color: '#1e3a5f' },
           { id: 10767, name: 'Talk', color: '#d97706' }, { id: 16, name: 'Animation', color: '#ca8a04' },
         ];
-        const EMOJIS = ['🎬', '🎥', '🦁', '🐯', '🚀', '🌙', '⭐', '🔥', '💎', '🌊', '🦋', '🎭', '🎪', '🧊', '🌈', '👑', '🐉', '🦊', '🎯', '🌺'];
+        const EMOJIS = ['<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">movie</span>', '🦁', '🐯', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">rocket_launch</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">dark_mode</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_fire_department</span>', '💎', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">waves</span>', '🦋', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theater_comedy</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">festival</span>', '🧊', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">lens_blur</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">emoji_events</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">pets</span>', '🦊', '🎯', '🌺'];
 
         let CU = null, CP = null, currentPlayingMovie = null, currentTVShow = null;
         let currentSeason = 1, currentEpisode = 1, searchTabMode = 'movies';
@@ -2138,7 +2150,7 @@
           users.push({ id, name, email, pass: btoa(pass) }); ls('erm_users', users);
           CU = { email, name, id }; ls('erm_user', CU);
           document.getElementById('authError').style.display = 'none';
-          showToast('🎉 Welcome to ermnium!'); showProfileScreen();
+          showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">celebration</span> Welcome to ermnium!'); showProfileScreen();
         }
         function doLogout() {
           clearHeroTimer();
@@ -2162,7 +2174,7 @@
             const c = document.createElement('div'); c.className = 'profile-card';
             const avatarHtml = p.pic
               ? `<div class="p-avatar"><img src="${p.pic}" alt="${p.name}"></div>`
-              : `<div class="p-avatar" style="background:linear-gradient(135deg,${p.color || '#3b5998'},${p.color2 || '#8b9dc3'})">${p.emoji || '🎬'}</div>`;
+              : `<div class="p-avatar" style="background:linear-gradient(135deg,${p.color || '#3b5998'},${p.color2 || '#8b9dc3'})">${p.emoji || '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>'}</div>`;
             c.innerHTML = `${avatarHtml}<span class="p-name">${p.name}</span>`;
             c.onclick = () => selectProfile(p); row.appendChild(c);
           });
@@ -2181,7 +2193,7 @@
         }
         function saveProfile() {
           const name = document.getElementById('newProfileName').value.trim(); if (!name) return;
-          const ep = document.getElementById('emojiPicker'); const emoji = ep._sel || '🎬';
+          const ep = document.getElementById('emojiPicker'); const emoji = ep._sel || '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>';
           const pal = [['#3b5998', '#8b9dc3'], ['#e91e8c', '#f9a8d4'], ['#7b68ee', '#a78bfa'], ['#2d7a2d', '#a3d9a3'], ['#0055cc', '#99bbff']];
           const [color, color2] = pal[Math.floor(Math.random() * pal.length)];
           const picFile = document.getElementById('newProfilePic').files[0];
@@ -2193,13 +2205,13 @@
               profs.push({ id: profileId, name, emoji, color, color2, pic: r.result });
               ls(`erm_profs_${CU.id}`, profs);
               closeModal('addProfileModal'); document.getElementById('newProfileName').value = ''; document.getElementById('newProfilePic').value = '';
-              renderProfiles(); showToast(`✨ Profile "${name}" created!`);
+              renderProfiles(); showToast(`<span class="material-icons" style="font-size:inherit;vertical-align:middle;">auto_awesome</span> Profile "${name}" created!`);
             }; r.readAsDataURL(picFile);
           } else {
             profs.push({ id: profileId, name, emoji, color, color2 });
             ls(`erm_profs_${CU.id}`, profs);
             closeModal('addProfileModal'); document.getElementById('newProfileName').value = '';
-            renderProfiles(); showToast(`✨ Profile "${name}" created!`);
+            renderProfiles(); showToast(`<span class="material-icons" style="font-size:inherit;vertical-align:middle;">auto_awesome</span> Profile "${name}" created!`);
           }
         }
 
@@ -2209,7 +2221,7 @@
           const pp = document.getElementById('picPreview');
           const pe = document.getElementById('picPreviewEmoji');
           if (CP?.pic) { pp.src = CP.pic; pp.style.display = 'block'; pe.style.display = 'none'; }
-          else { pp.style.display = 'none'; pe.textContent = CP?.emoji || '🎬'; pe.style.display = 'block'; }
+          else { pp.style.display = 'none'; pe.innerHTML = CP?.emoji || '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>'; pe.style.display = 'block'; }
           document.getElementById('picFileInput').value = '';
           openModal('profilePicModal');
         }
@@ -2234,7 +2246,7 @@
             if (idx > -1) { profs[idx].pic = r.result; ls(`erm_profs_${CU.id}`, profs); }
             updateNavAvatar();
             closeModal('profilePicModal');
-            showToast('📷 Profile picture updated!');
+            showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">photo_camera</span> Profile picture updated!');
           }; r.readAsDataURL(file);
         }
         function updateNavAvatar() {
@@ -2242,7 +2254,7 @@
           const emoji = document.getElementById('navAvatarEmoji');
           const av = document.getElementById('navAvatar');
           if (CP?.pic) { img.src = CP.pic; img.style.display = 'block'; emoji.style.display = 'none'; av.style.background = ''; }
-          else { img.style.display = 'none'; emoji.textContent = CP?.emoji || '👤'; emoji.style.display = 'block'; av.style.background = `linear-gradient(135deg,${CP?.color || '#3b5998'},${CP?.color2 || '#8b9dc3'})`; }
+          else { img.style.display = 'none'; emoji.innerHTML = CP?.emoji || '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">person</span>'; emoji.style.display = 'block'; av.style.background = `linear-gradient(135deg,${CP?.color || '#3b5998'},${CP?.color2 || '#8b9dc3'})`; }
         }
 
         // ── ENTER APP ──
@@ -2331,7 +2343,7 @@
           document.getElementById('heroYear').textContent = (d.release_date || '').slice(0, 4);
           document.getElementById('heroRuntime').textContent = d.runtime ? `${d.runtime} min` : '';
           document.getElementById('heroLang').textContent = (d.original_language || '').toUpperCase();
-          document.getElementById('heroRatingBadge').textContent = d.vote_average ? `⭐ ${d.vote_average.toFixed(1)}` : '';
+          document.getElementById('heroRatingBadge').innerHTML = d.vote_average ? `<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${d.vote_average.toFixed(1)}` : '';
           document.getElementById('heroGenreBadge').textContent = d.genres?.length ? d.genres[0].name : '';
           document.getElementById('heroDesc').textContent = d.overview || '';
           document.getElementById('heroPlayBtn').onclick = () => playMovie(d);
@@ -2339,7 +2351,7 @@
           const favKey = `erm_favs_${CU.id}_${CP?.id}`;
           const isFav = (ls(favKey) || []).some(f => f.id === d.id && f._type === 'movie');
           const hfb = document.getElementById('heroFavBtn');
-          if (hfb) { hfb.textContent = isFav ? '★' : '☆'; hfb.classList.toggle('active', isFav); hfb._item = { ...d, _type: 'movie' }; }
+          if (hfb) { hfb.innerHTML = isFav ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span>'; hfb.classList.toggle('active', isFav); hfb._item = { ...d, _type: 'movie' }; }
         }
         function toggleHeroFav() {
           const hfb = document.getElementById('heroFavBtn');
@@ -2347,7 +2359,7 @@
           toggleFav(hfb._item, null);
           const favKey = `erm_favs_${CU.id}_${CP?.id}`;
           const isFav = (ls(favKey) || []).some(f => f.id === hfb._item.id && f._type === 'movie');
-          hfb.textContent = isFav ? '★' : '☆'; hfb.classList.toggle('active', isFav);
+          hfb.innerHTML = isFav ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span>'; hfb.classList.toggle('active', isFav);
         }
 
         // ── TV VIEW ──
@@ -2379,7 +2391,7 @@
           document.getElementById('tvHeroTitle').textContent = d.name || d.original_name || '';
           document.getElementById('tvHeroYear').textContent = (d.first_air_date || '').slice(0, 4);
           document.getElementById('tvHeroSeasons').textContent = d.number_of_seasons ? `${d.number_of_seasons} Season${d.number_of_seasons > 1 ? 's' : ''}` : '';
-          document.getElementById('tvHeroRating').textContent = d.vote_average ? `⭐ ${d.vote_average.toFixed(1)}` : '';
+          document.getElementById('tvHeroRating').innerHTML = d.vote_average ? `<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${d.vote_average.toFixed(1)}` : '';
           document.getElementById('tvHeroGenre').textContent = d.genres?.length ? d.genres[0].name : '';
           document.getElementById('tvHeroDesc').textContent = d.overview || '';
           document.getElementById('tvHeroPlayBtn').onclick = () => playTV(d, 1, 1);
@@ -2420,15 +2432,15 @@
 
           card.innerHTML = `
     <img src="${img}" alt="${title.replace(/"/g, '&quot;')}" loading="lazy">
-    ${rating ? `<div class="m-rating-badge">⭐ ${rating}</div>` : ''}
+    ${rating ? `<div class="m-rating-badge"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${rating}</div>` : ''}
     ${isTV ? '<div class="tv-badge">TV</div>' : isNew ? '<div class="new-badge">NEW</div>' : ''}
-    ${isHistory ? `<button class="hist-remove-btn" style="${rightBadgeStyle}" title="Remove from Continue Watching">✕</button>` : ''}
+    ${isHistory ? `<button class="hist-remove-btn" style="${rightBadgeStyle}" title="Remove from Continue Watching"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">close</span></button>` : ''}
     <div class="m-card-overlay">
       <div class="m-card-title">${title}</div>
-      <div class="m-card-meta">${year}${rating ? ' · ⭐' + rating : ''}</div>
+      <div class="m-card-meta">${year}${rating ? ' · <span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>' + rating : ''}</div>
       <div class="m-card-btns">
-        <button class="card-btn-play">${isTV ? '▶ Watch' : '▶ Play'}</button>
-        <button class="card-btn-fav ${isFav ? 'active' : ''}">${isFav ? '★' : '☆'}</button>
+        <button class="card-btn-play">${isTV ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">play_arrow</span> Watch' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">play_arrow</span> Play'}</button>
+        <button class="card-btn-fav ${isFav ? 'active' : ''}">${isFav ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span>'}</button>
       </div>
     </div>`;
           const itemWithType = { ...item, _type: isTV ? 'tv' : 'movie' };
@@ -2484,8 +2496,8 @@
           let favs = ls(key) || [];
           const idx = favs.findIndex(f => f.id === item.id && f._type === item._type);
           const title = item.title || item.name || '';
-          if (idx === -1) { favs.push({ id: item.id, title, name: item.name, poster_path: item.poster_path, release_date: item.release_date || item.first_air_date, vote_average: item.vote_average, _type: item._type }); if (btn) { btn.textContent = '★'; btn.classList.add('active'); } showToast(`❤️ Added "${title}"`); }
-          else { favs.splice(idx, 1); if (btn) { btn.textContent = '☆'; btn.classList.remove('active'); } showToast(`Removed "${title}"`); }
+          if (idx === -1) { favs.push({ id: item.id, title, name: item.name, poster_path: item.poster_path, release_date: item.release_date || item.first_air_date, vote_average: item.vote_average, _type: item._type }); if (btn) { btn.innerHTML = '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>'; btn.classList.add('active'); } showToast(`<span class="material-icons" style="font-size:inherit;vertical-align:middle;">favorite</span> Added "${title}"`); }
+          else { favs.splice(idx, 1); if (btn) { btn.innerHTML = '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span>'; btn.classList.remove('active'); } showToast(`Removed "${title}"`); }
           ls(key, favs);
         }
         function addToHistory(item) {
@@ -2539,7 +2551,7 @@
           const data = await tmdb('/search/' + type, { query: q });
           const items = data?.results || [];
           document.getElementById('srCount').textContent = items.length ? `${items.length} results` : '';
-          if (!items.length) { grid.innerHTML = '<div class="no-results" style="grid-column:1/-1"><div class="nr-icon">🔍</div><h3>No results found</h3><p>Try a different search term</p></div>'; return; }
+          if (!items.length) { grid.innerHTML = '<div class="no-results" style="grid-column:1/-1"><div class="nr-icon"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">search</span></div><h3>No results found</h3><p>Try a different search term</p></div>'; return; }
           renderGrid('srGrid', items, type);
         }
         async function loadGenreSection(genreId, label, type) {
@@ -2649,10 +2661,10 @@
           const users = ls('erm_users') || []; const u = users.find(x => x.id === CU.id);
           if (u) { u.name = name; ls('erm_users', users); }
           CU.name = name; ls('erm_user', CU);
-          document.getElementById('sName').textContent = name; closeModal('editNameModal'); showToast('✅ Name updated!');
+          document.getElementById('sName').innerHTML = name; closeModal('editNameModal'); showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">check_circle</span> Name updated!');
         }
-        function clearHistory() { ls(`erm_hist_${CU.id}_${CP.id}`, []); loadHistoryRow(); showToast('🗑️ Watch history cleared'); }
-        function clearFavs() { ls(`erm_favs_${CU.id}_${CP.id}`, []); showToast('🗑️ Favourites cleared'); }
+        function clearHistory() { ls(`erm_hist_${CU.id}_${CP.id}`, []); loadHistoryRow(); showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">delete</span> Watch history cleared'); }
+        function clearFavs() { ls(`erm_favs_${CU.id}_${CP.id}`, []); showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">delete</span> Favourites cleared'); }
         function deleteAccount() {
           if (!confirm('Permanently delete your account and all data?')) return;
           const uid = CU.id;
@@ -2670,15 +2682,15 @@
         async function previewObsessed() {
           const id = document.getElementById('obsessedIdInput').value.trim();
           const type = document.getElementById('obsessedTypeSelect').value;
-          if (!id) { showToast('⚠️ Enter a TMDB ID first'); return; }
+          if (!id) { showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">warning</span> Enter a TMDB ID first'); return; }
           const data = await tmdb(type === 'tv' ? `/tv/${id}` : `/movie/${id}`);
-          if (!data || data.success === false) { showToast('❌ TMDB ID not found'); return; }
+          if (!data || data.success === false) { showToast('<span class="material-icons" style="font-size:inherit;vertical-align:middle;">cancel</span> TMDB ID not found'); return; }
           const title = data.title || data.name || 'Unknown';
           const year = (data.release_date || data.first_air_date || '').slice(0, 4);
-          const rating = data.vote_average ? `⭐ ${data.vote_average.toFixed(1)}` : '';
+          const rating = data.vote_average ? `<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${data.vote_average.toFixed(1)}` : '';
           document.getElementById('obsessedPreviewImg').src = poster(data.poster_path);
           document.getElementById('obsessedPreviewTitle').textContent = title;
-          document.getElementById('obsessedPreviewMeta').textContent = `${year}${rating ? ' · ' + rating : ''} · ${type === 'tv' ? '📺 TV Show' : '🎬 Movie'}`;
+          document.getElementById('obsessedPreviewMeta').innerHTML = `${year}${rating ? ' · ' + rating : ''} · ${type === 'tv' ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">tv</span> TV Show' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span> Movie'}`;
           document.getElementById('obsessedPreview').classList.add('show');
           obsessedData = { id: parseInt(id), type, title, poster_path: data.poster_path, data };
         }
@@ -2710,7 +2722,7 @@
           ['heroBg', 'tvHeroBg'].forEach(id => { const el = document.getElementById(id); if (el && bg) el.style.backgroundImage = `url(${bg})`; });
           const title = full.title || full.name || '';
           const year = (full.release_date || full.first_air_date || '').slice(0, 4);
-          const rating = full.vote_average ? `⭐ ${full.vote_average.toFixed(1)}` : '';
+          const rating = full.vote_average ? `<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${full.vote_average.toFixed(1)}` : '';
           const genre = full.genres?.length ? full.genres[0].name : '';
           const playFn = () => cfg.type === 'tv' ? playTV(full, 1, 1) : playMovie(full);
           ['heroTitle', 'tvHeroTitle'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = title; });
@@ -2719,7 +2731,7 @@
           ['heroGenreBadge', 'tvHeroGenre'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = genre; });
           ['heroYear', 'tvHeroYear'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = year; });
           const hpb = document.getElementById('heroPlayBtn'); if (hpb) hpb.onclick = playFn;
-          showToast(`🎉 It's ${title}. It's all ${title}. Forever.`);
+          showToast(`<span class="material-icons" style="font-size:inherit;vertical-align:middle;">celebration</span> It's ${title}. It's all ${title}. Forever.`);
         }
         function clearObsessedMode() {
           const prefs = ls(`erm_prefs_${CU.id}`) || {}; delete prefs.obsessed; ls(`erm_prefs_${CU.id}`, prefs);
@@ -2743,7 +2755,7 @@
         function showToast(msg) {
           const t = document.getElementById('toast');
           const icon = msg.match(/^(\p{Emoji})/u);
-          document.getElementById('toastIcon').textContent = icon ? icon[1] : '✓';
+          document.getElementById('toastIcon').innerHTML = icon ? icon[1] : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">check</span>';
           document.getElementById('toastMsg').textContent = icon ? msg.replace(icon[1], '').trim() : msg;
           t.classList.remove('show'); void t.offsetWidth; t.classList.add('show');
           clearTimeout(_toast); _toast = setTimeout(() => t.classList.remove('show'), 3500);
