@@ -1809,7 +1809,7 @@
             <div class="row-wrap" id="tvScifiRow"></div>
           </div>
           <div class="section">
-            <div class="section-hdr"><span class="section-title">👶 Animation</span></div>
+            <div class="section-hdr"><span class="section-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">child_care</span> Animation</span></div>
             <div class="row-wrap" id="tvAnimRow"></div>
           </div>
         </div>
@@ -1908,7 +1908,7 @@
             </div>
           </div>
           <div class="s-card">
-            <h3>🎨 Theme</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">palette</span> Theme</h3>
             <div class="s-row">
               <div>
                 <div class="s-label">Accent Color</div>
@@ -1945,7 +1945,7 @@
             </div>
           </div>
           <div class="s-card">
-            <h3>🌐 Network Mode</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">language</span> Network Mode</h3>
             <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;line-height:1.6">Switch streaming source
               to <strong style="color:var(--accent)">vidsrc.me</strong>. Uses IMDB IDs. Some titles may not be
               available.</p>
@@ -1959,7 +1959,7 @@
             </div>
           </div>
           <div class="s-card">
-            <h3>🟢 Obsessed Mode</h3>
+            <h3><span class="material-icons" style="font-size:inherit;vertical-align:middle;">visibility</span> Obsessed Mode</h3>
             <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;line-height:1.6">Replace
               <em>everything</em> with one single title. Totally normal.</p>
             <div class="obsessed-input-row">
@@ -1977,7 +1977,7 @@
                 <div class="obsessed-preview-title" id="obsessedPreviewTitle">—</div>
                 <div class="obsessed-preview-meta" id="obsessedPreviewMeta">—</div>
               </div>
-              <button class="obsessed-activate-btn" onclick="activateObsessedMode()">🟢 Activate</button>
+              <button class="obsessed-activate-btn" onclick="activateObsessedMode()"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">play_circle</span> Activate</button>
             </div>
             <div id="obsessedActiveStatus"
               style="display:none;padding:10px;background:rgba(45,122,45,0.1);border:1px solid rgba(45,122,45,0.3);font-size:12px;color:#2d7a2d;font-weight:bold">
@@ -2071,7 +2071,7 @@
           { id: 10765, name: 'Sci-Fi & Fantasy', color: '#2563eb' }, { id: 9648, name: 'Mystery', color: '#1e3a5f' },
           { id: 10767, name: 'Talk', color: '#d97706' }, { id: 16, name: 'Animation', color: '#ca8a04' },
         ];
-        const EMOJIS = ['<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">movie</span>', '🦁', '🐯', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">rocket_launch</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">dark_mode</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_fire_department</span>', '💎', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">waves</span>', '🦋', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theater_comedy</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">festival</span>', '🧊', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">lens_blur</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">emoji_events</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">pets</span>', '🦊', '🎯', '🌺'];
+        const EMOJIS = ['<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theaters</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">movie</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">pets</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">cruelty_free</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">rocket_launch</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">dark_mode</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_fire_department</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">diamond</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">waves</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">spa</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">theater_comedy</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">festival</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">ac_unit</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">lens_blur</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">emoji_events</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">pets</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">smart_toy</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">track_changes</span>', '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">local_florist</span>'];
 
         let CU = null, CP = null, currentPlayingMovie = null, currentTVShow = null;
         let currentSeason = 1, currentEpisode = 1, searchTabMode = 'movies';
@@ -2636,7 +2636,7 @@
           const p = ls(`erm_prefs_${CU.id}`) || {}; p.networkMode = networkModeEnabled; ls(`erm_prefs_${CU.id}`, p);
           const desc = document.getElementById('networkModeDesc');
           if (desc) desc.innerHTML = networkModeEnabled ? 'Currently using: <strong style="color:var(--accent)">vidsrc.me</strong>' : 'Currently using: <strong>vidsrc.xyz</strong>';
-          showToast(networkModeEnabled ? '🌐 Network Mode enabled — vidsrc.me' : 'Network Mode disabled');
+          showToast(networkModeEnabled ? 'Network Mode enabled — vidsrc.me' : 'Network Mode disabled');
         }
         function loadSettingsUI() {
           document.getElementById('sEmail').textContent = CU.email;
