@@ -799,6 +799,35 @@
         background: var(--accent);
       }
 
+      .hist-remove-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px; /* Default right if no other badges */
+        width: 20px;
+        height: 20px;
+        background: var(--accent);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.2s, background 0.2s;
+      }
+
+      .m-card:hover .hist-remove-btn {
+        opacity: 1;
+      }
+
+      .hist-remove-btn:hover {
+        background: #c00;
+        border-color: #c00;
+      }
+
       .m-card-overlay {
         position: absolute;
         inset: 0;
@@ -2072,7 +2101,6 @@
           document.addEventListener('click', e => { if (!e.target.closest('#navAvatar') && !e.target.closest('#navDd')) closeDd(); });
           document.addEventListener('keydown', e => {
             if (e.key === '/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); document.getElementById('topbarSearch').focus(); }
-            if (e.key === 'Escape') closePlayer();
           });
         });
 
@@ -2113,7 +2141,7 @@
           showToast('🎉 Welcome to ermnium!'); showProfileScreen();
         }
         function doLogout() {
-          closePlayer(); clearHeroTimer();
+          clearHeroTimer();
           ls('erm_user', null);
           if (CU) ls(`erm_prof_${CU.id}`, null);
           CU = null; CP = null; closeDd(); tvLoaded = false; networkModeEnabled = false;
@@ -2235,7 +2263,6 @@
 
         // ── VIEWS ──
         function showScreen(id) {
-          if (id !== 'appScreen') closePlayer();
           ['authScreen', 'profileScreen', 'appScreen'].forEach(s => document.getElementById(s).classList.remove('active'));
           document.getElementById(id).classList.add('active');
         }
@@ -2244,7 +2271,6 @@
           ['homeView', 'tvView', 'searchView', 'libraryView', 'settingsView'].forEach(v => {
             const el = document.getElementById(v); if (el) { el.style.display = 'none'; }
           });
-          document.getElementById('playerView').classList.remove('active');
           const el = document.getElementById(name + 'View');
           if (el) { el.style.display = 'block'; window.scrollTo(0, 0); }
           document.querySelectorAll('.topbar-nav a').forEach(l => l.classList.remove('active'));
@@ -2376,7 +2402,7 @@
         }
 
         // ── CARD ──
-        function buildCard(item, type) {
+        function buildCard(item, type, isHistory = false) {
           if (!CU || !CP) return document.createElement('div');
           const isTV = type === 'tv' || item._type === 'tv';
           const favKey = `erm_favs_${CU.id}_${CP.id}`;
@@ -2388,10 +2414,15 @@
           const rating = item.vote_average ? item.vote_average.toFixed(1) : '';
           const isNew = year >= '2024';
           const card = document.createElement('div'); card.className = 'm-card';
+          
+          let rightBadgeStyle = '';
+          if (isHistory && (isTV || isNew)) rightBadgeStyle = 'right: 32px;'; // Shift remove button left if there's a TV/NEW badge
+
           card.innerHTML = `
     <img src="${img}" alt="${title.replace(/"/g, '&quot;')}" loading="lazy">
     ${rating ? `<div class="m-rating-badge">⭐ ${rating}</div>` : ''}
     ${isTV ? '<div class="tv-badge">TV</div>' : isNew ? '<div class="new-badge">NEW</div>' : ''}
+    ${isHistory ? `<button class="hist-remove-btn" style="${rightBadgeStyle}" title="Remove from Continue Watching">✕</button>` : ''}
     <div class="m-card-overlay">
       <div class="m-card-title">${title}</div>
       <div class="m-card-meta">${year}${rating ? ' · ⭐' + rating : ''}</div>
@@ -2404,6 +2435,22 @@
           card.querySelector('.card-btn-play').onclick = e => { e.stopPropagation(); if (isTV) playTVById(item.id, item); else playMovieById(item.id, item); };
           const fb = card.querySelector('.card-btn-fav');
           fb.onclick = e => { e.stopPropagation(); toggleFav(itemWithType, fb); };
+          
+          if (isHistory) {
+            const rmBtn = card.querySelector('.hist-remove-btn');
+            if (rmBtn) {
+              rmBtn.onclick = e => {
+                e.stopPropagation();
+                const key = `erm_hist_${CU.id}_${CP.id}`;
+                let hist = ls(key) || [];
+                hist = hist.filter(m => !(m.id === item.id && m._type === itemWithType._type));
+                ls(key, hist);
+                loadHistoryRow();
+                showToast(`Removed "${title}"`);
+              };
+            }
+          }
+          
           card.onclick = () => { if (isTV) playTVById(item.id, item); else playMovieById(item.id, item); };
           return card;
         }
@@ -2456,8 +2503,8 @@
           const row = document.getElementById('historyRow');
           const sec = document.getElementById('continueSection');
           if (!hist.length) { row.innerHTML = '<span style="color:var(--text-muted);font-style:italic">Nothing watched yet</span>'; if (sec) sec.style.display = 'none'; return; }
-          row.innerHTML = ''; hist.slice(0, 15).forEach(m => row.appendChild(buildCard(m, m._type)));
-          if (sec) { sec.style.display = 'block'; const cr = document.getElementById('continueRow'); cr.innerHTML = ''; hist.slice(0, 8).forEach(m => cr.appendChild(buildCard(m, m._type))); }
+          row.innerHTML = ''; hist.slice(0, 15).forEach(m => row.appendChild(buildCard(m, m._type, true)));
+          if (sec) { sec.style.display = 'block'; const cr = document.getElementById('continueRow'); cr.innerHTML = ''; hist.slice(0, 8).forEach(m => cr.appendChild(buildCard(m, m._type, true))); }
         }
 
         // ── SEARCH ──
