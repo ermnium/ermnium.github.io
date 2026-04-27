@@ -159,7 +159,8 @@
           <button class="source-btn" id="srcSuperBtn" onclick="switchSource('super')">SuperEmbed</button>
           <button class="source-btn" id="srcMultiBtn" onclick="switchSource('multi')">MultiEmbed</button>
         </div>
-        <button class="player-fav-btn" id="playerFavBtn" onclick="togglePlayerFav()">☆</button>
+        <button class="source-btn" onclick="toggleFullScreen()"><span class="material-icons" style="font-size:16px;vertical-align:middle;">fullscreen</span></button>
+        <button class="player-fav-btn" id="playerFavBtn" onclick="togglePlayerFav()"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span></button>
       </div>
     </div>
     <iframe class="player-iframe" id="playerIframe" allowfullscreen referrerpolicy="origin"></iframe>
@@ -171,7 +172,7 @@
         <div class="p-crew" id="pCrew"></div>
       </div>
       <div id="epPicker" class="ep-picker" style="display:none">
-        <div class="ep-picker-title">📺 Episodes</div>
+        <div class="ep-picker-title"><span class="material-icons" style="font-size:inherit;vertical-align:middle;">tv</span> Episodes</div>
         <div class="ep-picker-controls">
           <select class="ep-select" id="seasonSelect" onchange="loadEpisodes()"></select>
         </div>
@@ -261,7 +262,7 @@
       chips.innerHTML = '';
       if (data.vote_average) {
         const c = document.createElement('span'); c.className = 'p-chip gold';
-        c.textContent = `★ ${data.vote_average.toFixed(1)}`; chips.appendChild(c);
+        c.innerHTML = `<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span> ${data.vote_average.toFixed(1)}`; chips.appendChild(c);
       }
       if (data.release_date || data.first_air_date) {
         const y = (data.release_date || data.first_air_date).substring(0,4);
@@ -390,7 +391,7 @@
       const favs = ls(key) || [];
       const isFav = favs.some(f => f.id === currentItem.id && f._type === currentItem._type);
       const btn = document.getElementById('playerFavBtn');
-      btn.textContent = isFav ? '★' : '☆';
+      btn.innerHTML = isFav ? '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star</span>' : '<span class="material-icons" style="font-size:inherit;vertical-align:middle;">star_border</span>';
       btn.classList.toggle('active', isFav);
     }
 
@@ -408,6 +409,27 @@
       }
       ls(key, favs);
       updateFavBtn();
+    }
+
+    function toggleFullScreen() {
+      const iframe = document.getElementById('playerIframe');
+      if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
     }
 
     window.onload = initPlayer;
