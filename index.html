@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE htm<l>
 <html lang="en">
 <head>
 <link rel="icon" type="image/png" href="v5.png">
@@ -8,6 +8,7 @@
 <title>ermnium.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 /* ── ERMN THEME VARIABLES ── */
 :root {
@@ -575,6 +576,9 @@ body.show-ratings .m-rating-badge { display: block; }
   .player-body { grid-template-columns: 1fr; max-height: 300px; }
   .ep-picker { border-left: none; border-top: 1px solid var(--border); }
 }
+.material-icons { font-size:1.2em; vertical-align:middle; line-height:1; position:relative; top:-1px; margin-right:3px; }
+.topbar-nav .material-icons { font-size:1.15em; }
+.dd-item .material-icons { font-size:1.1em; color:var(--accent2); }
 </style>
 </head>
 <body class="show-ratings">
@@ -695,10 +699,10 @@ body.show-ratings .m-rating-badge { display: block; }
   <div class="topbar">
     <span class="topbar-logo" onclick="showView('home')">ermnium.</span>
     <nav class="topbar-nav">
-      <a id="nav-home" onclick="showView('home')">🏠 Home</a>
-      <a id="nav-tv" onclick="showView('tv')">📺 TV Shows</a>
-      <a id="nav-search" onclick="showView('search')">🎬 Browse</a>
-      <a id="nav-library" onclick="showView('library')">❤️ My List</a>
+      <a id="nav-home" onclick="showView('home')"><span class="material-icons">home</span> Home</a>
+      <a id="nav-tv" onclick="showView('tv')"><span class="material-icons">tv</span> TV Shows</a>
+      <a id="nav-search" onclick="showView('search')"><span class="material-icons">movie</span> Browse</a>
+      <a id="nav-library" onclick="showView('library')"><span class="material-icons">favorite</span> My List</a>
     </nav>
     <div class="topbar-right">
       <input class="topbar-search" id="topbarSearch" placeholder="🔍 Search…" onkeydown="if(event.key==='Enter')doNavSearch()">
@@ -713,12 +717,12 @@ body.show-ratings .m-rating-badge { display: block; }
             <div class="dd-email" id="ddProfileEmail">—</div>
           </div>
           <div class="dd-divider"></div>
-          <div class="dd-item" onclick="openProfilePicModal()">📷 Profile Picture</div>
-          <div class="dd-item" onclick="showView('library');closeDd()">❤️ My List</div>
-          <div class="dd-item" onclick="showView('settings');closeDd()">⚙️ Settings</div>
-          <div class="dd-item" onclick="switchProfile()">👥 Switch Profile</div>
+          <div class="dd-item" onclick="openProfilePicModal()"><span class="material-icons">photo_camera</span> Profile Picture</div>
+          <div class="dd-item" onclick="showView('library');closeDd()"><span class="material-icons">favorite</span> My List</div>
+          <div class="dd-item" onclick="showView('settings');closeDd()"><span class="material-icons">settings</span> Settings</div>
+          <div class="dd-item" onclick="switchProfile()"><span class="material-icons">group</span> Switch Profile</div>
           <div class="dd-divider"></div>
-          <div class="dd-item danger" onclick="doLogout()">🚪 Sign Out</div>
+          <div class="dd-item danger" onclick="doLogout()"><span class="material-icons">logout</span> Sign Out</div>
         </div>
       </div>
     </div>
@@ -754,7 +758,7 @@ body.show-ratings .m-rating-badge { display: block; }
 
     <div class="app-body">
       <div class="section" id="continueSection" style="display:none">
-        <div class="section-hdr"><span class="section-title">▶ Continue Watching</span></div>
+        <div class="section-hdr"><span class="section-title"><span class="material-icons">play_circle</span> Continue Watching</span></div>
         <div class="row-wrap" id="continueRow"></div>
       </div>
       <div class="section">
@@ -867,8 +871,8 @@ body.show-ratings .m-rating-badge { display: block; }
         <div class="lib-count" id="libCount"></div>
       </div>
       <div class="lib-tabs">
-        <button class="lib-tab active" onclick="showLibTab('favs')">❤️ Favourites</button>
-        <button class="lib-tab" onclick="showLibTab('hist')">🕐 History</button>
+        <button class="lib-tab active" onclick="showLibTab('favs')"><span class="material-icons">favorite</span> Favourites</button>
+        <button class="lib-tab" onclick="showLibTab('hist')"><span class="material-icons">history</span> History</button>
       </div>
       <div id="libFavs">
         <div class="results-grid" id="favGrid"></div>
@@ -937,7 +941,7 @@ body.show-ratings .m-rating-badge { display: block; }
         <div class="s-row" style="padding-top:0">
           <div>
             <div class="s-label">Enable Network Mode</div>
-            <div class="s-desc" id="networkModeDesc">Currently using: <strong>vsembed.ru</strong></div>
+            <div class="s-desc" id="networkModeDesc">Currently using: <strong>vidsrc.xyz</strong></div>
           </div>
           <label class="toggle"><input type="checkbox" id="networkModeToggle" onchange="toggleNetworkMode(this)"><span class="tgl-slider"></span></label>
         </div>
@@ -1003,8 +1007,9 @@ body.show-ratings .m-rating-badge { display: block; }
       <span class="player-type-badge" id="playerTypeBadge"></span>
       <div class="player-actions">
         <div class="source-switcher" id="sourceSwitcher">
-          <button class="source-btn active" id="srcDefaultBtn" onclick="switchSource('default')">Default</button>
-          <button class="source-btn" id="srcNetworkBtn" onclick="switchSource('network')">🌐 Network</button>
+          <button class="source-btn active" id="srcDefaultBtn" onclick="switchSource('default')">Source 1</button>
+          <button class="source-btn" id="srcAltBtn" onclick="switchSource('alt')">Source 2</button>
+          <button class="source-btn" id="srcNetworkBtn" onclick="switchSource('network')"><span class="material-icons" style="font-size:12px;margin-right:2px;">public</span> Network</button>
         </div>
         <button class="player-fav-btn" id="playerFavBtn" onclick="togglePlayerFav()">☆</button>
       </div>
@@ -1447,9 +1452,11 @@ async function playMovie(movie){
   if(currentSource==='network'){
     document.getElementById('playerIframe').src='about:blank';
     const imdbId=await getImdbId(movie.id,'movie');currentImdbId=imdbId;
-    document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/movie?imdb=${imdbId}`:`https://vsembed.ru/embed/movie?tmdb=${movie.id}`;
+    document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/movie?imdb=${imdbId}`:`https://vidsrc.xyz/embed/movie?tmdb=${movie.id}`;
     if(!imdbId){currentSource='default';updateSourceBtns();}
-  }else{document.getElementById('playerIframe').src=`https://vsembed.ru/embed/movie?tmdb=${movie.id}`;}
+  }else if(currentSource==='alt'){
+    document.getElementById('playerIframe').src=`https://vidsrc.cc/v2/embed/movie/${movie.id}`;
+  }else{document.getElementById('playerIframe').src=`https://vidsrc.xyz/embed/movie?tmdb=${movie.id}`;}
   document.getElementById('playerTitle').textContent=movie.title||'Now Playing';
   document.getElementById('playerSubtitle').textContent=(movie.release_date||'').slice(0,4)+(movie.runtime?` · ${movie.runtime} min`:'');
   document.getElementById('playerTypeBadge').textContent='🎬 Movie';
@@ -1483,8 +1490,10 @@ async function playTV(show,season,episode){
   if(currentSource==='network'){
     document.getElementById('playerIframe').src='about:blank';
     const imdbId=await getImdbId(show.id,'tv');currentImdbId=imdbId;
-    document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/tv?imdb=${imdbId}&season=${currentSeason}&episode=${currentEpisode}`:`https://vsembed.ru/embed/tv?tmdb=${show.id}&season=${currentSeason}&episode=${currentEpisode}`;
-  }else{document.getElementById('playerIframe').src=`https://vsembed.ru/embed/tv?tmdb=${show.id}&season=${currentSeason}&episode=${currentEpisode}`;}
+    document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/tv?imdb=${imdbId}&season=${currentSeason}&episode=${currentEpisode}`:`https://vidsrc.xyz/embed/tv?tmdb=${show.id}&season=${currentSeason}&episode=${currentEpisode}`;
+  }else if(currentSource==='alt'){
+    document.getElementById('playerIframe').src=`https://vidsrc.cc/v2/embed/tv/${show.id}/${currentSeason}/${currentEpisode}`;
+  }else{document.getElementById('playerIframe').src=`https://vidsrc.xyz/embed/tv?tmdb=${show.id}&season=${currentSeason}&episode=${currentEpisode}`;}
   document.getElementById('playerTitle').textContent=show.name||show.title||'Now Playing';
   document.getElementById('playerSubtitle').textContent=`S${currentSeason} E${currentEpisode}`;
   document.getElementById('playerTypeBadge').textContent='📺 TV Show';
@@ -1529,8 +1538,10 @@ async function loadEpisodes(){
       document.getElementById('playerSubtitle').textContent=`S${currentSeason} E${currentEpisode}`;
       if(currentSource==='network'){
         const imdbId=currentImdbId||await getImdbId(currentTVShow.id,'tv');currentImdbId=imdbId;
-        document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/tv?imdb=${imdbId}&season=${currentSeason}&episode=${currentEpisode}`:`https://vsembed.ru/embed/tv?tmdb=${currentTVShow.id}&season=${currentSeason}&episode=${currentEpisode}`;
-      }else{document.getElementById('playerIframe').src=`https://vsembed.ru/embed/tv?tmdb=${currentTVShow.id}&season=${currentSeason}&episode=${currentEpisode}`;}
+        document.getElementById('playerIframe').src=imdbId?`https://vidsrc.me/embed/tv?imdb=${imdbId}&season=${currentSeason}&episode=${currentEpisode}`:`https://vidsrc.xyz/embed/tv?tmdb=${currentTVShow.id}&season=${currentSeason}&episode=${currentEpisode}`;
+      }else if(currentSource==='alt'){
+        document.getElementById('playerIframe').src=`https://vidsrc.cc/v2/embed/tv/${currentTVShow.id}/${currentSeason}/${currentEpisode}`;
+      }else{document.getElementById('playerIframe').src=`https://vidsrc.xyz/embed/tv?tmdb=${currentTVShow.id}&season=${currentSeason}&episode=${currentEpisode}`;}
       showToast(`▶ S${currentSeason} E${currentEpisode}${name?' — '+name:''}`);
     };return btn;
   };
@@ -1541,6 +1552,7 @@ function closePlayer(){document.getElementById('playerIframe').src='';document.g
 function switchSource(src){currentSource=src;updateSourceBtns();reloadCurrentIframe();}
 function updateSourceBtns(){
   document.getElementById('srcDefaultBtn').className='source-btn'+(currentSource==='default'?' active':'');
+  document.getElementById('srcAltBtn').className='source-btn'+(currentSource==='alt'?' active':'');
   document.getElementById('srcNetworkBtn').className='source-btn'+(currentSource==='network'?' network-active':'');
 }
 async function reloadCurrentIframe(){
@@ -1556,7 +1568,11 @@ async function reloadCurrentIframe(){
 function loadDefaultIframe(){
   if(!currentPlayingMovie)return;
   const isTV=currentPlayingMovie._type==='tv';
-  document.getElementById('playerIframe').src=isTV?`https://vsembed.ru/embed/tv?tmdb=${currentPlayingMovie.id}&season=${currentSeason}&episode=${currentEpisode}`:`https://vsembed.ru/embed/movie?tmdb=${currentPlayingMovie.id}`;
+  if(currentSource==='alt'){
+    document.getElementById('playerIframe').src=isTV?`https://vidsrc.cc/v2/embed/tv/${currentPlayingMovie.id}/${currentSeason}/${currentEpisode}`:`https://vidsrc.cc/v2/embed/movie/${currentPlayingMovie.id}`;
+  }else{
+    document.getElementById('playerIframe').src=isTV?`https://vidsrc.xyz/embed/tv?tmdb=${currentPlayingMovie.id}&season=${currentSeason}&episode=${currentEpisode}`:`https://vidsrc.xyz/embed/movie?tmdb=${currentPlayingMovie.id}`;
+  }
 }
 function togglePlayerFav(){
   if(!currentPlayingMovie)return;
@@ -1711,7 +1727,7 @@ function toggleNetworkMode(cb){
   networkModeEnabled=cb.checked;
   const p=ls(`erm_prefs_${CU.id}`)||{};p.networkMode=networkModeEnabled;ls(`erm_prefs_${CU.id}`,p);
   const desc=document.getElementById('networkModeDesc');
-  if(desc)desc.innerHTML=networkModeEnabled?'Currently using: <strong style="color:var(--accent)">vidsrc.me</strong>':'Currently using: <strong>vsembed.ru</strong>';
+  if(desc)desc.innerHTML=networkModeEnabled?'Currently using: <strong style="color:var(--accent)">vidsrc.me</strong>':'Currently using: <strong>vidsrc.xyz</strong>';
   showToast(networkModeEnabled?'🌐 Network Mode enabled — vidsrc.me':'Network Mode disabled');
 }
 function loadSettingsUI(){
